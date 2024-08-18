@@ -1,0 +1,19 @@
+body {
+	margin: 0px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	padding: 1.5em;
+	background-color: black;
+	color: white;
+}
+
+header>a {
+	flex-grow: 5;
+}
+
+header>nav {
+	flex-grow: 1;
+}

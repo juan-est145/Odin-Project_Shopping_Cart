@@ -1,5 +1,6 @@
-export default function Header()
-{
+import "./styles/mainPage.css"
+
+export default function Header() {
 	return (
 		<header>
 			<a href="#">PC Store</a>
