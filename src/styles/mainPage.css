@@ -1,5 +1,11 @@
+@font-face {
+	font-family: "Roboto";
+	src: url("../../public/roboto/Roboto-Regular.ttf");
+}
+
 body {
 	margin: 0px;
+	font-family: "Roboto";
 }
 
 header {
@@ -8,12 +14,25 @@ header {
 	padding: 1.5em;
 	background-color: black;
 	color: white;
+	font-size: 1.4rem;
 }
 
 header>a {
 	flex-grow: 5;
+	color: white;
 }
 
-header>nav {
+.headerNav {
 	flex-grow: 1;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.headerNav>a{
+	color: white;
+	text-decoration: none;
+}
+
+.headerNav>a:hover{
+	text-decoration: underline;
 }
