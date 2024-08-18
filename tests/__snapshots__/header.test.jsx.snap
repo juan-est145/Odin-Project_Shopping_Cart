@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header > Renders the basic stuff 1`] = `
+<div>
+  <header>
+    <a
+      href="#"
+    >
+      PC Store
+    </a>
+    <nav>
+      <span>
+        Home
+      </span>
+      <span>
+        Shop
+      </span>
+      <span>
+        About
+      </span>
+      <span>
+        Cart
+      </span>
+    </nav>
+  </header>
+</div>
+`;
