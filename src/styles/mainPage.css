@@ -6,6 +6,8 @@
 body {
 	margin: 0px;
 	font-family: "Roboto";
+	display: flex;
+	flex-direction: column;
 }
 
 header {
@@ -28,11 +30,20 @@ header>a {
 	justify-content: space-evenly;
 }
 
-.headerNav>a{
+.headerNav>a {
 	color: white;
 	text-decoration: none;
 }
 
-.headerNav>a:hover{
+.headerNav>a:hover {
 	text-decoration: underline;
+}
+
+.mainPhoto {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
+	/*background: none;*/
 }

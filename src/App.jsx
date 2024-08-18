@@ -1,9 +1,12 @@
 //import { useState } from 'react'
-import Header from "./header"
+import { Header, MainImage } from "./header"
 
 function App() {
 	return (
-		<Header></Header>
+		<>
+			<Header></Header>
+			<MainImage></MainImage>
+		</>
 	)
 }
 
