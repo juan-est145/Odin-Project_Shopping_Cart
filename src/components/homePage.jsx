@@ -8,7 +8,7 @@ export function Header() {
 		<header>
 			<div className="headerLogo">
 				<a href="#">
-					<FontAwesomeIcon icon={faLaptopCode} id="iconLogo"/>
+					<FontAwesomeIcon icon={faLaptopCode} id="iconLogo" />
 					PC Store
 				</a>
 			</div>
@@ -16,7 +16,7 @@ export function Header() {
 				<a href="#">Home</a>
 				<a href="#">Shop</a>
 				<a href="#">About</a>
-				<FontAwesomeIcon icon={faCartShopping}/>
+				<FontAwesomeIcon icon={faCartShopping} />
 			</nav>
 		</header>
 	);

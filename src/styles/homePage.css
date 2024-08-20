@@ -38,7 +38,7 @@ header {
 	gap: 20px;
 }
 
-.headerLogo>a{
+.headerLogo>a {
 	color: white;
 	display: flex;
 	font-family: "Redig";
@@ -47,7 +47,7 @@ header {
 	gap: 10px;
 }
 
-#iconLogo{
+#iconLogo {
 	align-self: flex-end;
 	margin-top: 12px;
 }
