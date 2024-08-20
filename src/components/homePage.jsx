@@ -8,10 +8,10 @@ export function Header() {
 	return (
 		<header>
 			<div className="headerLogo">
-				<a href="#">
+				<Link to="/">
 					<FontAwesomeIcon icon={faLaptopCode} id="iconLogo" />
 					PC Store
-				</a>
+				</Link>
 			</div>
 			<nav className="headerNav">
 				<Link to="/">Home</Link>
