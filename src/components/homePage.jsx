@@ -1,7 +1,7 @@
 import "../styles/homePage.css"
 import motherBoardImage from "../../public/motherBoard.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import { faLaptopCode, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 export function Header() {
 	return (
@@ -16,7 +16,7 @@ export function Header() {
 				<a href="#">Home</a>
 				<a href="#">Shop</a>
 				<a href="#">About</a>
-				<a href="#">Cart</a>
+				<FontAwesomeIcon icon={faCartShopping}/>
 			</nav>
 		</header>
 	);

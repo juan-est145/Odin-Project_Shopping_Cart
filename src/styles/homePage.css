@@ -61,12 +61,13 @@ header {
 	font-size: 1.6rem;
 }
 
-.headerNav>a {
+.headerNav>* {
 	color: white;
 	text-decoration: none;
+	cursor: pointer;
 }
 
-.headerNav>a:hover {
+.headerNav>*:hover {
 	text-decoration: underline;
 }
 
