@@ -1,13 +1,13 @@
 //import { useState } from 'react'
-import { Header, MainImage } from "./homePage"
+import { Header, HomePage } from "./homePage"
 
 function App() {
 	return (
 		<>
 			<Header></Header>
-			<MainImage></MainImage>
+			<HomePage></HomePage>
 		</>
-	)
+	);
 }
 
 export default App

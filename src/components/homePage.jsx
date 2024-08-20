@@ -23,7 +23,7 @@ export function Header() {
 	);
 }
 
-export function MainImage() {
+export function HomePage() {
 	return (
 		<main>
 			<img src={motherBoardImage} alt="An image of a mother board" className="mainPhoto" />
