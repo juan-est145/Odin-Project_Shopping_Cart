@@ -26,6 +26,8 @@ header {
 	background-color: black;
 	color: white;
 	font-size: 1.4rem;
+	text-wrap: nowrap;
+	gap: 10px;
 }
 
 .headerLogo {
@@ -55,6 +57,8 @@ header {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	gap: 10px;
+	font-size: 1.6rem;
 }
 
 .headerNav>a {
