@@ -1,4 +1,4 @@
-import "../styles/mainPage.css"
+import "../styles/homePage.css"
 import motherBoardImage from "../../public/motherBoard.jpg"
 
 export function Header() {
@@ -16,16 +16,13 @@ export function Header() {
 }
 
 export function MainImage() {
-	const style = {
-		"margin" : "0px",
-		"color" : "white",
-	};
-
-
 	return (
 		<main>
-			<img src={motherBoardImage} alt="An image of a mother board" className="mainPhoto"/>
-			<h1 style={style}>Lorem Ipsum</h1>
+			<img src={motherBoardImage} alt="An image of a mother board" className="mainPhoto" />
+			<div className="welcomeMessage">
+				<h1>Looking for hardware? You are in the right place</h1>
+				<button>Shop now</button>
+			</div>
 		</main>
 	)
 }
