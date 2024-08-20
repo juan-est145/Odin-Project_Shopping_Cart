@@ -19,10 +19,11 @@ export function MainImage() {
 	return (
 		<main>
 			<img src={motherBoardImage} alt="An image of a mother board" className="mainPhoto" />
-			<div className="welcomeMessage">
-				<h1>Looking for hardware? You are in the right place</h1>
-				<button>Shop now</button>
-			</div>
+				<div className="homeText">
+					<h1>Looking for hardware? You are at the right place.</h1>
+					<h3>PC Store provides great hardware for a competitive price. Don&apos;t believe us? Check it out!</h3>
+				</div>
+				<button className="shopBtn">Shop now</button>
 		</main>
 	)
 }

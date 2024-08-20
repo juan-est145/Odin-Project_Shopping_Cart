@@ -45,9 +45,12 @@ header>a {
 
 main {
 	display: flex;
+	flex-direction: column;
 	flex-grow: 1;
+	text-align: center;
 	justify-content: center;
 	align-items: center;
+	color: white;
 }
 
 .mainPhoto {
@@ -58,6 +61,24 @@ main {
 	z-index: -1;
 }
 
-.welcomeMessage {
+.homeText {
+	max-width: 50ch;
+	font-size: 1.4rem;
+}
 
+.shopBtn {
+	--btn-color: rgb(15, 43, 226);
+	--btn-hover: rgb(10, 27, 143);
+	font-size: 1.3rem;
+	font-weight: bold;
+	padding: 0.6em;
+	border-radius: 1.4em;
+	border: none;
+	cursor: pointer;
+	background-color: var(--btn-color);
+	color: white;
+}
+
+.shopBtn:hover {
+	background-color: var(--btn-hover);
 }
