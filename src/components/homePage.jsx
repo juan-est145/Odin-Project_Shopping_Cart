@@ -1,5 +1,5 @@
-import "./styles/mainPage.css"
-import motherBoardImage from "../public/motherBoard.jpg"
+import "../styles/mainPage.css"
+import motherBoardImage from "../../public/motherBoard.jpg"
 
 export function Header() {
 	return (

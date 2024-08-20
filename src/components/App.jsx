@@ -1,5 +1,5 @@
 //import { useState } from 'react'
-import { Header, MainImage } from "./header"
+import { Header, MainImage } from "./homePage"
 
 function App() {
 	return (
