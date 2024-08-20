@@ -3,7 +3,7 @@ import ShopPage from "./components/shopPage";
 
 const routes = [
 	{
-		path: '/',
+		path: "/",
 		element: <App />
 	},
 	{

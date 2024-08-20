@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/homePage.css"
 import motherBoardImage from "../../public/motherBoard.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,8 +14,8 @@ export function Header() {
 				</a>
 			</div>
 			<nav className="headerNav">
-				<a href="#">Home</a>
-				<a href="#">Shop</a>
+				<Link to="/">Home</Link>
+				<Link to="shop">Shop</Link>
 				<a href="#">About</a>
 				<FontAwesomeIcon icon={faCartShopping} />
 			</nav>
