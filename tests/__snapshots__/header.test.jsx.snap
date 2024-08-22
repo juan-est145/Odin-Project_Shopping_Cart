@@ -32,6 +32,8 @@ exports[`Header > Renders the basic stuff 1`] = `
       class="headerNav"
     >
       <a
+        aria-current="page"
+        class="activePage"
         href="/"
       >
         Home
@@ -42,7 +44,7 @@ exports[`Header > Renders the basic stuff 1`] = `
         Shop
       </a>
       <a
-        href="#"
+        href="/about"
       >
         About
       </a>
