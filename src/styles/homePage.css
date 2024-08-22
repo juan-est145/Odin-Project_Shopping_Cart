@@ -67,7 +67,8 @@ header {
 	cursor: pointer;
 }
 
-.headerNav>*:hover {
+.headerNav>*:hover,
+.activePage {
 	text-decoration: underline;
 }
 

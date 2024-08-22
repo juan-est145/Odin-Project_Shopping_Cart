@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import PropTypes from "prop-types";
 
 export default function ShopPage() {
-	const [items, setItems] = useOutletContext();
+	const {items, setItems} = useOutletContext();
 
 	useEffect(() => {
 		if (items.length !== 0)
