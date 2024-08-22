@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
-
+import PropTypes from "prop-types";
 
 export default function ShopPage() {
 	const [items, setItems] = useState([]);
 
 	useEffect(() => {
 		if (items.length !== 0)
-			return ;
+			return;
 		getShopItems().then((shopItems) => {
 			if (shopItems)
 				setItems(shopItems);
@@ -25,7 +24,7 @@ export default function ShopPage() {
 	);
 }
 
-function Items({items}) {
+function Items({ items }) {
 	return (
 		<>
 			{items.map((element) => {
@@ -44,7 +43,15 @@ function Items({items}) {
 }
 
 async function getShopItems() {
-	const response = await fetch('https://fakestoreapi.com/products/category/electronics', {mode: "cors"});
-	const results = await response.json();
-	return (results);
+	try {
+		const response = await fetch('https://fakestoreapi.com/products/category/electronics', { mode: "cors" });
+		const results = await response.json();
+		return (results);
+	} catch (error) {
+		console.error("Failed to fetch items data", error);
+	}
 }
+
+Items.propTypes = {
+	items: PropTypes.array,
+};
