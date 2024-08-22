@@ -2,7 +2,7 @@ import { Link, useOutletContext } from "react-router-dom";
 import { useEffect } from "react";
 import PropTypes from "prop-types";
 
-export default function ShopPage() {
+export function ShopPage() {
 	const {items, setItems} = useOutletContext();
 
 	useEffect(() => {

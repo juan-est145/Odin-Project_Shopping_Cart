@@ -1,6 +1,6 @@
 import App from "./components/App";
 import { HomePage } from "./components/homePage";
-import ShopPage from "./components/shopPage";
+import {ShopPage} from "./components/shopPage";
 import { AboutPage } from "./components/aboutPage";
 
 const routes = [
