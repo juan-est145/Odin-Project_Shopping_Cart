@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useOutletContext } from "react-router-dom";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 
 export default function ShopPage() {
-	const [items, setItems] = useState([]);
+	const [items, setItems] = useOutletContext();
 
 	useEffect(() => {
 		if (items.length !== 0)
@@ -12,7 +12,7 @@ export default function ShopPage() {
 			if (shopItems)
 				setItems(shopItems);
 		});
-	}, [items]);
+	}, [items, setItems]);
 
 	return (
 		<>
