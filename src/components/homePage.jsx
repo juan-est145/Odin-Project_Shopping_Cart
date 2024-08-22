@@ -1,42 +1,36 @@
-import { Link, useOutletContext } from "react-router-dom";
-import PropTypes from "prop-types"
+import { Link, NavLink } from "react-router-dom";
 import "../styles/homePage.css"
 import motherBoardImage from "../../public/motherBoard.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptopCode, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
-export function Header({ activePage, setActivePage }) {
+export function Header() {
 	let className = "activePage";
-	let firstIndex = 0;
-	let secondIndex = 1;
-	let thirdIndex = 2;
 
 	return (
 		<header>
 			<div className="headerLogo">
-				<Link
-					to="/"
-					onClick={() => setActivePage(firstIndex)}>
+				<Link to="/">
 					<FontAwesomeIcon icon={faLaptopCode} id="iconLogo" />
 					PC Store
 				</Link>
 			</div>
 			<nav className="headerNav">
-				<Link
+				<NavLink
 					to="/"
-					className={activePage === firstIndex ? className : null}
-					onClick={() => setActivePage(firstIndex)}>
-					Home</Link>
-				<Link
+					className={({ isActive }) =>
+						isActive ? className : null}>
+					Home</NavLink>
+				<NavLink
 					to="shop"
-					className={activePage === secondIndex ? className : null}
-					onClick={() => setActivePage(secondIndex)}>
-					Shop</Link>
-				<a
-					href="#"
-					className={activePage === thirdIndex ? className : null}
-					onClick={() => setActivePage(thirdIndex)}
-				>About</a>
+					className={({ isActive }) =>
+						isActive ? className : null}>
+					Shop</NavLink>
+				<NavLink
+					to="about"
+					className={({ isActive }) =>
+						isActive ? className : null}>
+					About</NavLink>
 				<FontAwesomeIcon icon={faCartShopping} />
 			</nav>
 		</header>
@@ -44,8 +38,6 @@ export function Header({ activePage, setActivePage }) {
 }
 
 export function HomePage() {
-	const {setActivePage} = useOutletContext();
-	let shopIndex = 1;
 
 	return (
 		<main>
@@ -54,16 +46,9 @@ export function HomePage() {
 				<h1>Looking for hardware? You are at the right place.</h1>
 				<h3>PC Store provides great hardware for a competitive price. Don&apos;t believe us? Check it out!</h3>
 			</div>
-			<Link 
-				to="shop"
-				onClick={() => setActivePage(shopIndex)}>
+			<Link to="shop">
 				<button className="shopBtn">Shop now</button>
 			</Link>
 		</main>
 	)
-}
-
-Header.propTypes = {
-	activePage : PropTypes.number,
-	setActivePage: PropTypes.func,
 }
