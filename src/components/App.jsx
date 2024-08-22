@@ -1,11 +1,12 @@
 //import { useState } from 'react'
-import { Header, HomePage } from "./homePage"
+import { Outlet } from "react-router-dom";
+import { Header } from "./homePage"
 
 function App() {
 	return (
 		<>
 			<Header></Header>
-			<HomePage></HomePage>
+			<Outlet></Outlet>
 		</>
 	);
 }
