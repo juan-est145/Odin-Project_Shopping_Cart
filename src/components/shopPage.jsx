@@ -1,25 +1,30 @@
-import { Link, useOutletContext } from "react-router-dom";
-import { useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { MoonLoader } from "react-spinners";
 import PropTypes from "prop-types";
+import "../styles/shopPage.css"
 
 export function ShopPage() {
-	const {items, setItems} = useOutletContext();
+	const { items, setItems } = useOutletContext();
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		if (items.length !== 0)
+		if (items.length !== 0) {
+			setLoading(false);
 			return;
+		}
 		getShopItems().then((shopItems) => {
 			if (shopItems)
 				setItems(shopItems);
+			setLoading(false);
 		});
 	}, [items, setItems]);
 
 	return (
 		<>
 			<h1>Shop</h1>
-			<h3>See something that you fancy?</h3>
-			<Items items={items}></Items>
-			<Link to="/">Go back</Link>
+			{!loading ? <h3>See something that you fancy?</h3> : null}
+			{loading ? <Loader></Loader> : <Items items={items}></Items>}
 		</>
 	);
 }
@@ -39,6 +44,15 @@ function Items({ items }) {
 				);
 			})}
 		</>
+	);
+}
+
+function Loader() {
+	return (
+		<div className={"spinner"}>
+			<h1>Loading</h1>
+			<MoonLoader size={100}></MoonLoader>
+		</div>
 	);
 }
 
