@@ -41,9 +41,9 @@ function Items({ items }) {
 						<img src={element.image} alt={`Photo of a ${element.title}`} />
 						<p>{`${element.price} €`}</p>
 						<div className="inputField">
-							<button>+</button>
-							<input type="number"></input>
-							<button>-</button>
+							<button className="incrementBtn">+</button>
+							<input type="number" min={0} placeholder="0"></input>
+							<button className="decrementBtn">-</button>
 						</div>
 					</div>
 				);

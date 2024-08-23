@@ -13,15 +13,53 @@
 }
 
 .productCard {
+	--input-font-size: 1.2rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	width: 350px;
+	min-height: 314px;
 	font-size: 0.8rem;
+	padding: 1.4em;
 	background-color: white;
 }
 
 .productCard>img {
 	width: 140px;
+}
+
+.inputField>input {
+	text-align: center;
+	width: 5em;
+	font-size: var(--input-font-size);
+}
+
+.decrementBtn,
+.incrementBtn {
+	font-size: var(--input-font-size);
+	min-width: 30px;
+	min-height: 100%;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+.decrementBtn {
+	background-color: black;
+}
+
+.incrementBtn {
+	background-color: rgb(15, 43, 226);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+	/* Firefox */
 }

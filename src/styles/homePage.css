@@ -16,7 +16,9 @@ body {
 }
 
 main {
-	padding: 2em;
+	--btn-color: rgb(15, 43, 226);
+	--btn-hover: rgb(10, 27, 143);
+	padding: 0.8em;
 }
 
 #root {
@@ -102,8 +104,6 @@ header {
 }
 
 .shopBtn {
-	--btn-color: rgb(15, 43, 226);
-	--btn-hover: rgb(10, 27, 143);
 	font-size: 1.3rem;
 	font-weight: bold;
 	padding: 0.6em;
