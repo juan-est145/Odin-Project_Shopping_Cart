@@ -31,7 +31,10 @@ export function Header() {
 					className={({ isActive }) =>
 						isActive ? className : null}>
 					About</NavLink>
-				<FontAwesomeIcon icon={faCartShopping} />
+				<Link
+					to={"order"}>
+					<FontAwesomeIcon icon={faCartShopping} />
+				</Link>
 			</nav>
 		</header>
 	);
