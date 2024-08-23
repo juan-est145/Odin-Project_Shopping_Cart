@@ -9,8 +9,14 @@
 }
 
 body {
+	--mainColor: #f6f6f6;
 	margin: 0px;
 	font-family: "Roboto";
+	background-color: var(--mainColor);
+}
+
+main {
+	padding: 2em;
 }
 
 #root {
@@ -72,7 +78,7 @@ header {
 	text-decoration: underline;
 }
 
-main {
+.homePage {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;

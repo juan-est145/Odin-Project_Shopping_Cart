@@ -21,11 +21,13 @@ export function ShopPage() {
 	}, [items, setItems]);
 
 	return (
-		<>
+		<main>
 			<h1>Shop</h1>
 			{!loading ? <h3>See something that you fancy?</h3> : null}
-			{loading ? <Loader></Loader> : <Items items={items}></Items>}
-		</>
+			<section className="cardContainer">
+				{loading ? <Loader></Loader> : <Items items={items}></Items>}
+			</section>
+		</main>
 	);
 }
 
@@ -34,13 +36,16 @@ function Items({ items }) {
 		<>
 			{items.map((element) => {
 				return (
-					<ul key={element.id}>
-						<li>{element.title}</li>
-						<li>{element.price}</li>
-						<li>{element.category}</li>
-						<li>{element.description}</li>
-						<img src={element.image} alt="Something" />
-					</ul>
+					<div key={element.id} className="productCard">
+						<h3>{element.title}</h3>
+						<img src={element.image} alt={`Photo of a ${element.title}`} />
+						<p>{`${element.price} €`}</p>
+						<div className="inputField">
+							<button>+</button>
+							<input type="number"></input>
+							<button>-</button>
+						</div>
+					</div>
 				);
 			})}
 		</>

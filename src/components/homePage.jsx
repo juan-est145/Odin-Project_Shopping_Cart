@@ -40,7 +40,7 @@ export function Header() {
 export function HomePage() {
 
 	return (
-		<main>
+		<main className="homePage">
 			<img src={motherBoardImage} alt="An image of a mother board" className="mainPhoto" />
 			<div className="homeText">
 				<h1>Looking for hardware? You are at the right place.</h1>

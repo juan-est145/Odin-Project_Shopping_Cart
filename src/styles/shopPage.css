@@ -4,3 +4,24 @@
 	justify-content: center;
 	align-items: center;
 }
+
+.cardContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	gap: 20px;
+}
+
+.productCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 350px;
+	font-size: 0.8rem;
+	background-color: white;
+}
+
+.productCard>img {
+	width: 140px;
+}
