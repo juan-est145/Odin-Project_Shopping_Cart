@@ -25,6 +25,11 @@
 	background-color: white;
 }
 
+.productCard>p {
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
 .productCard>img {
 	width: 140px;
 }
