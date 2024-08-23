@@ -4,11 +4,12 @@ import { Header } from "./homePage"
 
 function App() {
 	const [items, setItems] = useState([]);
+	const [order, setOrder] = useState({});
 	
 	return (
 		<>
 			<Header></Header>
-			<Outlet context={{items, setItems}}></Outlet>
+			<Outlet context={{items, setItems, order, setOrder}}></Outlet>
 		</>
 	);
 }

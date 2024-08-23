@@ -35,20 +35,26 @@ function Items({ items }) {
 	return (
 		<>
 			{items.map((element) => {
-				return (
-					<div key={element.id} className="productCard">
-						<h3>{element.title}</h3>
-						<img src={element.image} alt={`Photo of a ${element.title}`} />
-						<p>{`${element.price} €`}</p>
-						<div className="inputField">
-							<button className="incrementBtn">+</button>
-							<input type="number" min={0} placeholder="0"></input>
-							<button className="decrementBtn">-</button>
-						</div>
-					</div>
-				);
+				return (<Cards key={element.id} product={element}></Cards>);
 			})}
 		</>
+	);
+}
+
+function Cards({ product }) {
+	const { order, setOrder } = useOutletContext();
+
+	return (
+		<div className="productCard">
+			<h3>{product.title}</h3>
+			<img src={product.image} alt={`Photo of a ${product.title}`} />
+			<p>{`${product.price} €`}</p>
+			<div className="inputField">
+				<button className="incrementBtn">+</button>
+				<input type="number" min={0} placeholder="0"></input>
+				<button className="decrementBtn">-</button>
+			</div>
+		</div>
 	);
 }
 
@@ -74,3 +80,7 @@ async function getShopItems() {
 Items.propTypes = {
 	items: PropTypes.array,
 };
+
+Cards.propTypes = {
+	product: PropTypes.object,
+}

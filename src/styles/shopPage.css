@@ -55,7 +55,7 @@
 }
 
 .incrementBtn {
-	background-color: rgb(15, 43, 226);
+	background-color: var(--btn-color);
 }
 
 input[type="number"]::-webkit-outer-spin-button,
