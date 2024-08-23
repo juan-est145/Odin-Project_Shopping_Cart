@@ -1,7 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MoonLoader } from "react-spinners";
-import PropTypes, { func } from "prop-types";
+import PropTypes from "prop-types";
 import "../styles/shopPage.css"
 
 export function ShopPage() {
@@ -57,13 +57,11 @@ function Cards({ product }) {
 	}
 	
 	function incrementBtn() {
-		const deepCopy = JSON.parse(JSON.stringify(product));
-		const newQuantity = deepCopy.quantity + 1;
 		setOrder((prevOrder) => ({
             ...prevOrder,
             [product.id]: {
                 ...product,
-                quantity: newQuantity,
+                quantity: (prevOrder[product.id]?.quantity || 0) + 1,
             },
         }));
 	}
