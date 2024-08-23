@@ -1,7 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MoonLoader } from "react-spinners";
-import PropTypes from "prop-types";
+import PropTypes, { func } from "prop-types";
 import "../styles/shopPage.css"
 
 export function ShopPage() {
@@ -43,6 +43,30 @@ function Items({ items }) {
 
 function Cards({ product }) {
 	const { order, setOrder } = useOutletContext();
+	
+	function updateCart(e) {
+		const newQuantity = parseInt(e.target.value, 10);
+		
+		setOrder((prevOrder) => ({
+            ...prevOrder,
+            [product.id]: {
+                ...product,
+                quantity: newQuantity <= 0 ? 0: newQuantity,
+            },
+        }));
+	}
+	
+	function incrementBtn() {
+		const deepCopy = JSON.parse(JSON.stringify(product));
+		const newQuantity = deepCopy.quantity + 1;
+		setOrder((prevOrder) => ({
+            ...prevOrder,
+            [product.id]: {
+                ...product,
+                quantity: newQuantity,
+            },
+        }));
+	}
 
 	return (
 		<div className="productCard">
@@ -50,8 +74,13 @@ function Cards({ product }) {
 			<img src={product.image} alt={`Photo of a ${product.title}`} />
 			<p>{`${product.price} €`}</p>
 			<div className="inputField">
-				<button className="incrementBtn">+</button>
-				<input type="number" min={0} placeholder="0"></input>
+				<button className="incrementBtn" onClick={incrementBtn}>+</button>
+				<input 
+				type="number" 
+				min={0} 
+				placeholder="0"
+				value={order[product.id]?.quantity || ""}
+				onChange={updateCart}></input>
 				<button className="decrementBtn">-</button>
 			</div>
 		</div>
