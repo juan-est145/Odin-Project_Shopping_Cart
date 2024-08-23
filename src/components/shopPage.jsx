@@ -43,27 +43,59 @@ function Items({ items }) {
 
 function Cards({ product }) {
 	const { order, setOrder } = useOutletContext();
-	
+
 	function updateCart(e) {
 		const newQuantity = parseInt(e.target.value, 10);
-		
+		const invalidNumber = isNaN(newQuantity) || newQuantity <= 0;
+
+		if (invalidNumber && !order[product.id])
+			return;
+		else if (invalidNumber && order[product.id]) {
+			setOrder((prevOrder) => {
+				const newOrder = { ...prevOrder }
+				delete newOrder[product.id];
+				return (newOrder);
+			});
+			return;
+		}
 		setOrder((prevOrder) => ({
-            ...prevOrder,
-            [product.id]: {
-                ...product,
-                quantity: newQuantity <= 0 ? 0: newQuantity,
-            },
-        }));
+			...prevOrder,
+			[product.id]: {
+				...product,
+				quantity: newQuantity <= 0 ? 0 : newQuantity,
+			},
+		}));
 	}
-	
+
 	function incrementBtn() {
 		setOrder((prevOrder) => ({
-            ...prevOrder,
-            [product.id]: {
-                ...product,
-                quantity: (prevOrder[product.id]?.quantity || 0) + 1,
-            },
-        }));
+			...prevOrder,
+			[product.id]: {
+				...product,
+				quantity: (prevOrder[product.id]?.quantity || 0) + 1,
+			},
+		}));
+	}
+
+	function decrementBtn() {
+		if (!(product.id in order))
+			return;
+
+		setOrder((prevOrder) => {
+			const newOrder = { ...prevOrder };
+			const newQuantity = (newOrder[product.id]?.quantity || 0) - 1;
+
+			if (newQuantity <= 0) {
+				delete newOrder[product.id];
+			} else {
+				newOrder[product.id] = {
+					...product,
+					quantity: newQuantity,
+				};
+			}
+
+			return newOrder;
+		});
 	}
 
 	return (
@@ -73,13 +105,13 @@ function Cards({ product }) {
 			<p>{`${product.price} €`}</p>
 			<div className="inputField">
 				<button className="incrementBtn" onClick={incrementBtn}>+</button>
-				<input 
-				type="number" 
-				min={0} 
-				placeholder="0"
-				value={order[product.id]?.quantity || ""}
-				onChange={updateCart}></input>
-				<button className="decrementBtn">-</button>
+				<input
+					type="number"
+					min={0}
+					placeholder="0"
+					value={order[product.id]?.quantity || ""}
+					onChange={updateCart}></input>
+				<button className="decrementBtn" onClick={decrementBtn}>-</button>
 			</div>
 		</div>
 	);
