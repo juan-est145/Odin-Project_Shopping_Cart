@@ -19,15 +19,14 @@ describe("Header", () => {
 describe("Home page", () => {
 	it("Renders the title page", () => {
 		const description = {
-			exact: false,
-			name : "Looking for hardware? You are at the right place.",
+			name : /Looking for hardware\? You are at the right place./i,
 		}
 		render(
             <BrowserRouter>
                 <HomePage />
             </BrowserRouter>
         );
-		expect(screen.getByRole("heading", description).textContent).toMatch("Looking for hardware? You are at the right place.");
+		expect(screen.getByRole("heading", description).textContent).toMatch(/Looking for hardware\? You are at the right place./i);
 	});
 
 	it("Renders the the button", () => {
