@@ -29,4 +29,13 @@ describe("Home page", () => {
         );
 		expect(screen.getByRole("heading", description).textContent).toMatch("Looking for hardware? You are at the right place.");
 	});
+
+	it("Renders the the button", () => {
+		render(
+            <BrowserRouter>
+                <HomePage />
+            </BrowserRouter>
+        );
+		expect(screen.getByRole("button").textContent).toMatch(/Shop now/i);
+	})
 });
