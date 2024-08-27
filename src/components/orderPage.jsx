@@ -27,6 +27,8 @@ export function OrderPage() {
 }
 
 function ShopOrder({ shopItem, setOrder }) {
+	let finalPrice = (Math.round((shopItem.price * shopItem.quantity) * 100) / 100).toFixed(2);
+
 	function deleteItem() {
 		setOrder((prevOrder) => {
 			const newOrder = {...prevOrder};
@@ -40,7 +42,7 @@ function ShopOrder({ shopItem, setOrder }) {
 			<img src={shopItem.image} alt={`Photo of a ${shopItem.title}`} />
 			<div>
 				<h3>{shopItem.title}</h3>
-				<p>{`${shopItem.price} x ${shopItem.quantity} = ${shopItem.price * shopItem.quantity} €`}</p>
+				<p>{`${shopItem.price} x ${shopItem.quantity} = ${finalPrice} €`}</p>
 				<button onClick={deleteItem}>Remove order</button>
 			</div>
 		</div>
@@ -50,10 +52,12 @@ function ShopOrder({ shopItem, setOrder }) {
 
 function TotalPayment({order})
 {
+	let totalPrice = Object.values(order).reduce((total, amount) => (
+		total +	(amount.price * amount.quantity)
+	), 0);
+
 	return (
-		<h1>{`${Object.values(order).reduce((total, amount) => (
-			total +	(amount.price * amount.quantity)
-		), 0)} €`}</h1>
+		<h1>{`${(Math.round(totalPrice * 100)/100).toFixed(2)} €`}</h1>
 	);
 }
 
