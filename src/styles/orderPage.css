@@ -33,7 +33,7 @@
 	width: 40ch;
 }
 
-.deleteBtn {
+.deleteBtn, .payBtn {
 	font-size: 1.1rem;
 	font-weight: bold;
 	padding: 0.6em;
@@ -46,4 +46,21 @@
 
 .deleteBtn:hover {
 	background-color: rgb(170, 2, 2);
+}
+
+.paymentInfo {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+	background-color: white;
+	padding: 2em;
+}
+
+.payBtn {
+	background-color: var(--btn-color);
+}
+
+.payBtn:hover {
+	background-color: var(--btn-hover);
 }

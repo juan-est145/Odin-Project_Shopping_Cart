@@ -55,9 +55,13 @@ function TotalPayment({order})
 	let totalPrice = Object.values(order).reduce((total, amount) => (
 		total +	(amount.price * amount.quantity)
 	), 0);
+	let message = "This is a mock website, you can't buy anything here";
 
 	return (
-		<h1>{`Total amount: ${(Math.round(totalPrice * 100)/100).toFixed(2)} €`}</h1>
+		<div className="paymentInfo">
+			<h1>{`Total amount: ${(Math.round(totalPrice * 100)/100).toFixed(2)} €`}</h1>
+			<button onClick={() => alert(message)} className="payBtn">Proceed to payment</button>
+		</div>
 	);
 }
 
