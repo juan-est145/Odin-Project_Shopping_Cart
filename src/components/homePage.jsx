@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
-import "../styles/homePage.css"
-import motherBoardImage from "../../public/motherBoard.jpg"
+import "../styles/homePage.css";
+import motherBoardImage from "../../public/motherBoard.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptopCode, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 

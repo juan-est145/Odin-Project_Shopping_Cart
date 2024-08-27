@@ -1,0 +1,7 @@
+.orderCard {
+	display: flex;
+}
+
+.orderCard>img {
+	width: 132px;
+}

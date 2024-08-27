@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { Outlet } from "react-router-dom";
-import { Header } from "./homePage"
+import { Header } from "./homePage";
 
 function App() {
 	const [items, setItems] = useState([]);

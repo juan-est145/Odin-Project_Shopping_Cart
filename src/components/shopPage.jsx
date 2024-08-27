@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MoonLoader } from "react-spinners";
 import PropTypes from "prop-types";
-import "../styles/shopPage.css"
+import "../styles/shopPage.css";
 
 export function ShopPage() {
 	const { items, setItems } = useOutletContext();
