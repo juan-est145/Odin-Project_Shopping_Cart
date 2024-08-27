@@ -1,7 +1,34 @@
+.cartDisplay {
+	display: flex;
+	justify-content: space-around;
+}
+
+.cartDisplay>section{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
 .orderCard {
 	display: flex;
+	gap: 20px;
+	background-color: white;
+	padding: 1.4em;
 }
 
 .orderCard>img {
-	width: 132px;
+	width: 100px;
+}
+
+.orderCard>div{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.orderCard>div h3 {
+	font-size: 0.9rem;
+	width: 40ch;
 }
