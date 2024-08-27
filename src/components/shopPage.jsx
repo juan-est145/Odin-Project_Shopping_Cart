@@ -7,6 +7,7 @@ import "../styles/shopPage.css";
 export function ShopPage() {
 	const { items, setItems } = useOutletContext();
 	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(false);
 
 	useEffect(() => {
 		if (items.length !== 0) {
@@ -16,9 +17,25 @@ export function ShopPage() {
 		getShopItems().then((shopItems) => {
 			if (shopItems)
 				setItems(shopItems);
+			else
+				setError(true);
 			setLoading(false);
 		});
 	}, [items, setItems]);
+
+	if (error) {
+		const style = {
+			"text-align": "center",
+		};
+
+		return (
+			<main>
+				<h1 style={style}>
+					Opps, there was some kind of error. Please refresh the page at a later time
+				</h1>
+			</main>
+		);
+	}
 
 	return (
 		<main>
@@ -133,6 +150,7 @@ async function getShopItems() {
 		return (results);
 	} catch (error) {
 		console.error("Failed to fetch items data", error);
+		return (null);
 	}
 }
 
