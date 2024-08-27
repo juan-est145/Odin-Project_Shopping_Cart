@@ -1,14 +1,20 @@
 import { useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "../styles/orderPage.css";
 
 export function OrderPage() {
 	const { order, setOrder } = useOutletContext();
 
-	if (Object.entries(order).length <= 0)
-	{
+	if (Object.entries(order).length <= 0) {
 		return (
-			<h1>Your shopping cart is empty at the moment</h1>
+			<main className="noCartDisplay">
+				<h1>Your shopping cart is empty at the moment</h1>
+				<h3>Go to the shop by clicking this button</h3>
+				<Link to="/shop">
+					<button className="shopBtn">Shop now</button>
+				</Link>
+			</main>
 		);
 	}
 
@@ -31,7 +37,7 @@ function ShopOrder({ shopItem, setOrder }) {
 
 	function deleteItem() {
 		setOrder((prevOrder) => {
-			const newOrder = {...prevOrder};
+			const newOrder = { ...prevOrder };
 			delete newOrder[shopItem.id];
 			return (newOrder);
 		})
@@ -50,16 +56,15 @@ function ShopOrder({ shopItem, setOrder }) {
 	);
 }
 
-function TotalPayment({order})
-{
+function TotalPayment({ order }) {
 	let totalPrice = Object.values(order).reduce((total, amount) => (
-		total +	(amount.price * amount.quantity)
+		total + (amount.price * amount.quantity)
 	), 0);
 	let message = "This is a mock website, you can't buy anything here";
 
 	return (
 		<div className="paymentInfo">
-			<h1>{`Total amount: ${(Math.round(totalPrice * 100)/100).toFixed(2)} €`}</h1>
+			<h1>{`Total amount: ${(Math.round(totalPrice * 100) / 100).toFixed(2)} €`}</h1>
 			<button onClick={() => alert(message)} className="payBtn">Proceed to payment</button>
 		</div>
 	);

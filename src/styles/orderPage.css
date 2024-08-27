@@ -3,6 +3,12 @@
 	justify-content: space-around;
 }
 
+.noCartDisplay {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .cartDisplay>section{
 	display: flex;
 	flex-direction: column;

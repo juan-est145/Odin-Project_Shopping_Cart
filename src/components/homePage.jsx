@@ -49,7 +49,7 @@ export function HomePage() {
 				<h1>Looking for hardware? You are at the right place.</h1>
 				<h3>PC Store provides great hardware for a competitive price. Don&apos;t believe us? Check it out!</h3>
 			</div>
-			<Link to="shop">
+			<Link to="/shop">
 				<button className="shopBtn">Shop now</button>
 			</Link>
 		</main>
