@@ -32,3 +32,18 @@
 	font-size: 0.9rem;
 	width: 40ch;
 }
+
+.deleteBtn {
+	font-size: 1.1rem;
+	font-weight: bold;
+	padding: 0.6em;
+	border-radius: 1.4em;
+	border: none;
+	cursor: pointer;
+	background-color: red;
+	color: white;
+}
+
+.deleteBtn:hover {
+	background-color: rgb(170, 2, 2);
+}

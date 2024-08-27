@@ -43,7 +43,7 @@ function ShopOrder({ shopItem, setOrder }) {
 			<div>
 				<h3>{shopItem.title}</h3>
 				<p>{`${shopItem.price} x ${shopItem.quantity} = ${finalPrice} €`}</p>
-				<button onClick={deleteItem}>Remove order</button>
+				<button className="deleteBtn" onClick={deleteItem}>Remove order</button>
 			</div>
 		</div>
 
@@ -57,7 +57,7 @@ function TotalPayment({order})
 	), 0);
 
 	return (
-		<h1>{`${(Math.round(totalPrice * 100)/100).toFixed(2)} €`}</h1>
+		<h1>{`Total amount: ${(Math.round(totalPrice * 100)/100).toFixed(2)} €`}</h1>
 	);
 }
 
