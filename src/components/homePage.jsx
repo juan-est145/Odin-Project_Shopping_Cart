@@ -3,10 +3,11 @@ import "../styles/homePage.css";
 import motherBoardImage from "../../public/motherBoard.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLaptopCode, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from "prop-types";
 
-export function Header() {
+export function Header({ order }) {
 	let className = "activePage";
-
+	let orderSize = Object.keys(order).length;
 	return (
 		<header>
 			<div className="headerLogo">
@@ -31,10 +32,13 @@ export function Header() {
 					className={({ isActive }) =>
 						isActive ? className : null}>
 					About</NavLink>
-				<Link
-					to={"order"}>
+				<NavLink
+					to={"order"}
+					className={({ isActive }) =>
+						isActive ? className : null}>
 					<FontAwesomeIcon icon={faCartShopping} />
-				</Link>
+					{orderSize > 0 && <span className="cartSize">{orderSize}</span>}
+				</NavLink>
 			</nav>
 		</header>
 	);
@@ -54,4 +58,8 @@ export function HomePage() {
 			</Link>
 		</main>
 	)
+}
+
+Header.propTypes = {
+	order: PropTypes.object,
 }

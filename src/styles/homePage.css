@@ -10,14 +10,14 @@
 
 body {
 	--mainColor: #f6f6f6;
+	--btn-color: rgb(15, 43, 226);
+	--btn-hover: rgb(10, 27, 143);
 	margin: 0px;
 	font-family: "Roboto";
 	background-color: var(--mainColor);
 }
 
 main {
-	--btn-color: rgb(15, 43, 226);
-	--btn-hover: rgb(10, 27, 143);
 	padding: 0.8em;
 }
 
@@ -78,6 +78,27 @@ header {
 .headerNav>*:hover,
 .activePage {
 	text-decoration: underline;
+}
+
+.headerNav>a:last-child{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cartSize {
+	--size: 25px;
+	align-self: flex-end;
+	min-width: var(--size);
+	min-height: var(--size);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	font-weight: bold;
+	background-color: var(--btn-color);
+	color: white;
+	border-radius: 50%;
 }
 
 .homePage {

@@ -8,7 +8,7 @@ function App() {
 	
 	return (
 		<>
-			<Header></Header>
+			<Header order={order}></Header>
 			<Outlet context={{items, setItems, order, setOrder}}></Outlet>
 		</>
 	);
